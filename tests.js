@@ -1,9 +1,10 @@
 const { expect } = require('chai')
-const { describe, it } = require('mocha')
+
+// const { describe, it } = require('mocha')
 const calculateScore = require('./scoring')
 
 describe('calculateScore', () => {
-  it('returns the score for a quarterback', function () {
+  it.only('returns the score for a quarterback', function () {
     const player = {
       name: 'Patrick Mahomes',
       position: 'QB',
