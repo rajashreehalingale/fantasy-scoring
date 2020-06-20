@@ -33,7 +33,7 @@ describe('calculateScore', () => {
       team: 'Buffalo',
       stats: {
         rushing: { attempts: 18, yards: 103, touchdowns: 2, fumbles: 0 },
-        receiving: { receptions: 6, yards: 37, touchdowns: 1, fumbles: 0 },
+        receiving: { receptions: 6, yards: 37, touchdowns: 0, fumbles: 0 },
         return: {
           kickreturn: { returns: 0, yards: 0, touchdowns: 0, fumbles: 0 },
           puntreturn: { returns: 0, yards: 0, touchdowns: 0, fumbles: 0 },
@@ -81,7 +81,7 @@ describe('calculateScore', () => {
     expect(score).to.equal(33.7)
   })
 
-  it.skip('returns 0 when position is unknown', () => {
+  it('returns 0 when position is unknown', () => {
     const player = {
       name: 'Robbie Gould',
       position: 'K',

@@ -1,4 +1,11 @@
+// Data function for Tightend
+function CalcScoreunknown(Player) {
+  let result = 0
 
+  return result
+}
+
+// Data function for Tightend
 function CalcScoreTightend(Player) {
   let result = 0
   let scoreTightend = [
@@ -14,6 +21,7 @@ function CalcScoreTightend(Player) {
   return result
 }
 
+// Data function for Receiver
 function CalcScoreReceiver(Player) {
   let result = 0
 
@@ -43,6 +51,7 @@ function CalcScoreReceiver(Player) {
 
 }
 
+// Data function for RunningBack
 function CalcScoreRB(Player) {
   let result = 0
 
@@ -70,7 +79,7 @@ function CalcScoreRB(Player) {
   return result
 }
 
-
+// Data function for QB
 function CalcScoreQB(Player) {
   let result = 0
 
@@ -88,8 +97,8 @@ function CalcScoreQB(Player) {
   return result
 }
 
+// Function: Where calculate all football calculation like QB, RB, WR, TE
 function CalcScoreCombine(calcData) {
-
   let result = 0
 
   for (let i = 0; i < calcData.length - 1; i++) {
@@ -99,6 +108,7 @@ function CalcScoreCombine(calcData) {
   return result
 }
 
+// Main function for calling correct calculation function
 function calculateScore(Player) {
   if (Player.position === 'QB') {
     return CalcScoreQB(Player)
@@ -112,6 +122,10 @@ function calculateScore(Player) {
   else if (Player.position === 'TE') {
     return CalcScoreTightend(Player)
   }
+  else if (Player.position === 'K') {
+    return CalcScoreunknown(Player)
+  }
+
 }
 
 module.exports = calculateScore
