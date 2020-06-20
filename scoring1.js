@@ -1,3 +1,13 @@
+function CalcScoreCombine(calcData) {
+
+  let result = 0
+
+  for (let i = 0; i < calcData.length - 1; i++) {
+    result = result + ((calcData[i].stat1 / calcData[i].per).toFixed(2) * calcData[i].points)
+  }
+
+  return result
+}
 
 function CalcScoreTightend(Player) {
   let result = 0
@@ -67,6 +77,64 @@ function CalcScoreRB(Player) {
 
   result = CalcScoreCombine(scoreRB)
 
+  /*   for (let i = 0; i < scoreRB.length - 1; i++) {
+      switch (scoreRB[i].sName) {
+        case 'ru10Yards':
+          result = result + (Player.stats.rushing.yards / scoreRB[i].yard) * scoreRB[i].points
+          break
+  
+        case 'ruTochD':
+          result = result + ((Player.stats.rushing.touchdowns / scoreRB[i].touchDown) * scoreRB[i].points)
+          break
+  
+        case 'rufumbles':
+          result = result + ((Player.stats.rushing.fumbles / scoreRB[i].fumbles) * scoreRB[i].points)
+          break
+  
+        case 'reception':
+          result = result + ((Player.stats.receiving.receptions / scoreRB[i].receptions) * scoreRB[i].points)
+          break
+  
+        case 'receiving10Yards':
+          result = result + (Player.stats.receiving.yards / scoreRB[i].yard) * scoreRB[i].points
+          break
+  
+        case 'receivingTochD':
+          result = result + ((Player.stats.receiving.touchdowns / scoreRB[i].touchDown) * scoreRB[i].points)
+          break
+  
+        case 'receivingfumbles':
+          result = result + ((Player.stats.receiving.fumbles / scoreRB[i].fumbles) * scoreRB[i].points)
+          break
+  
+        case 'kreturns':
+          result = result + ((Player.stats.return.kickreturn.returns / scoreRB[i].kick) * scoreRB[i].points)
+          break
+  
+        case 'kreTochD':
+          result = result + ((Player.stats.return.kickreturn.touchdowns / scoreRB[i].kick) * scoreRB[i].points)
+          break
+  
+        case 'krefumbles':
+          result = result + ((Player.stats.return.kickreturn.fumbles / scoreRB[i].fumbles) * scoreRB[i].points)
+          break
+  
+        case 'puntreturns':
+          result = result + ((Player.stats.return.puntreturn.returns / scoreRB[i].punt) * scoreRB[i].points)
+          break
+  
+        case 'puntreTochD':
+          result = result + ((Player.stats.return.puntreturn.yards / scoreRB[i].punt) * scoreRB[i].points)
+          break
+  
+        case 'puntrefumbles':
+          result = result + ((Player.stats.return.puntreturn.fumbles / scoreRB[i].punt) * scoreRB[i].points)
+          break
+  
+        default: result = 0
+      }
+    } */
+
   return result
 }
 
@@ -85,16 +153,34 @@ function CalcScoreQB(Player) {
 
   result = CalcScoreCombine(scoreQB)
 
-  return result
-}
-
-function CalcScoreCombine(calcData) {
-
-  let result = 0
-
-  for (let i = 0; i < calcData.length - 1; i++) {
-    result = result + ((calcData[i].stat1 / calcData[i].per).toFixed(2) * calcData[i].points)
-  }
+  /*  for (let i = 0; i < scoreQB.length - 1; i++) {
+     switch (scoreQB[i].sName) {
+       case 'p25Yards':
+         result = result + Player.stats.passing.yards / 25
+         break
+ 
+       case 'pTouchDowns':
+         result = result + Player.stats.passing.touchdowns * scoreQB[i].points
+         break
+ 
+       case 'pInterception':
+         result = result + Player.stats.passing.interceptions * scoreQB[i].points
+         break
+ 
+       case 'r10Yards':
+         result = result + Player.stats.rushing.yards / 10
+         break
+ 
+       case 'rTochD':
+         result = result + Player.stats.rushing.touchdowns * scoreQB[i].points
+         break
+ 
+       case 'rfumbles':
+         result = result + (Player.stats.rushing.fumbles * scoreQB[i].points)
+         break
+       default: result = 0
+     }
+   } */
 
   return result
 }
